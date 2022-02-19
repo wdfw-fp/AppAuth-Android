@@ -346,17 +346,17 @@ public class AuthorizationManagementActivity extends AppCompatActivity {
             AuthorizationManagementResponse response =
                     AuthorizationManagementUtil.responseWith(mAuthRequest, responseUri);
 
-            if (mAuthRequest.getState() == null && response.getState() != null
-                    || (mAuthRequest.getState() != null && !mAuthRequest.getState()
-                    .equals(response.getState()))) {
-
-                Logger.warn("State returned in authorization response (%s) does not match state "
-                        + "from request (%s) - discarding response",
-                        response.getState(),
-                        mAuthRequest.getState());
-
-                return AuthorizationRequestErrors.STATE_MISMATCH.toIntent();
-            }
+//            if (mAuthRequest.getState() == null && response.getState() != null
+//                    || (mAuthRequest.getState() != null && !mAuthRequest.getState()
+//                    .equals(response.getState()))) {
+//
+//                Logger.warn("State returned in authorization response (%s) does not match state "
+//                        + "from request (%s) - discarding response",
+//                        response.getState(),
+//                        mAuthRequest.getState());
+//
+//                return AuthorizationRequestErrors.STATE_MISMATCH.toIntent();
+//            }
 
             return response.toIntent();
         }
